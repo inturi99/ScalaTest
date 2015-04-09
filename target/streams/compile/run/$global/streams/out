@@ -1,0 +1,10 @@
+[info] Running assignment.Main 
+[debug] Waiting for threads to exit or System.exit to be called.
+[debug]   Classpath:
+[debug] 	/home/abelia/scalatest/target/scala-2.11/classes
+[debug] 	/home/abelia/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.6.jar
+[debug] Waiting for thread run-main-3f to terminate.
+[debug] 	Thread run-main-3f exited.
+[debug] Interrupting remaining threads (should be all daemons).
+[debug] Sandboxed run complete..
+[debug] Exited with code 0
