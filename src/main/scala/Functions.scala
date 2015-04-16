@@ -27,6 +27,7 @@ object Functions {
         list  = i :: list
     }
     list reverse
+
   }
   //Binary Search
   def binarySearch(a: Array[Int], p: Int): Int = {
@@ -52,4 +53,22 @@ object Functions {
       arr(j+1) = temp
     }
   }
+   //map
+  def map(v: Vector[Int], f: Int => Int) = {
+    var result = Vector[Int]()
+    for(n <- v){
+      result = result :+ f(n)
+    }
+    result
+  }
+  // filter
+  def filter(v:Vector[Int], f: Int => Boolean) = {
+    var result = Vector[Int] ()
+    for(n <- v ){
+      if(f(n))
+        result =result :+ n
+    }
+    result
+  }
+  def isEven(i: Int) = i % 2 == 0
 }

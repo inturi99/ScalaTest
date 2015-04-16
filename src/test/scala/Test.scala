@@ -27,4 +27,28 @@ class Test extends FlatSpec with Matchers {
     val aa=nn
     aa should  be (Array(5,10,20,30,70,90))
   }
+  "Map in Vector[1,2,3,4,5,6]" should "be Vector[2,3,4,5,6,7]" in {
+    val ve=Vector(1,2,3,4,5,6)
+    val ven=map(ve, _ + 1)
+    ven should be (Vector(2,3,4,5,6,7))
+  }
+
+  "Map in Vector[1,2,3,4,5,6]" should " not be Vector[2,3,4,5,6,7,8]" in {
+    val ve=Vector(1,2,3,4,5,6)
+    val ven=map(ve, _ + 1)
+    ven should not be (Vector(2,3,4,5,6,7,8))
+  }
+
+
+  "Filter in Vector[1,2,3,4,5,6,7,8,9] " should "be Vector[2,4,6,8]" in {
+    val vf=Vector(1,2,3,4,5,6,7,8,9)
+    val venf=filter(vf,isEven(_))
+    venf should be (Vector(2,4,6,8))
+  }
+"Filter in Vector[1,2,3,4,5,6,7,8,9] " should "not be Vector[2,4,6,8,9]" in {
+    val vf=Vector(1,2,3,4,5,6,7,8,9)
+    val venf=filter(vf,isEven(_))
+    venf should not be (Vector(2,4,6,8,9))
+  }
+
 }
