@@ -32,23 +32,37 @@ class Test extends FlatSpec with Matchers {
     val ven=map(ve, _ + 1)
     ven should be (Vector(2,3,4,5,6,7))
   }
-
   "Map in Vector[1,2,3,4,5,6]" should " not be Vector[2,3,4,5,6,7,8]" in {
     val ve=Vector(1,2,3,4,5,6)
     val ven=map(ve, _ + 1)
     ven should not be (Vector(2,3,4,5,6,7,8))
   }
-
-
   "Filter in Vector[1,2,3,4,5,6,7,8,9] " should "be Vector[2,4,6,8]" in {
     val vf=Vector(1,2,3,4,5,6,7,8,9)
     val venf=filter(vf,isEven(_))
     venf should be (Vector(2,4,6,8))
   }
-"Filter in Vector[1,2,3,4,5,6,7,8,9] " should "not be Vector[2,4,6,8,9]" in {
+  "Filter in Vector[1,2,3,4,5,6,7,8,9] " should "not be Vector[2,4,6,8,9]" in {
     val vf=Vector(1,2,3,4,5,6,7,8,9)
     val venf=filter(vf,isEven(_))
     venf should not be (Vector(2,4,6,8,9))
   }
+
+  "Take in Vector(1, 2, 3, 4, 5, 6, 7, 8, 9),3)" should "be Vector[1, 2, 3]" in {
+    val t=Vector(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    val tv=take(t,3)
+    tv should be (Vector(1, 2, 3))
+  }
+   "Take  Vector(1, 2, 3, 4, 5, 6, 7, 8, 9),0)" should "be Empty  Vector[]" in {
+    val t=Vector(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    val tv=take(t,0)
+    tv should be (Vector())
+  }
+   "Take Empty  Vector(),0)" should "be Vector[]" in {
+    val t=Vector()
+    val tv=take(t,0)
+    tv should be (Vector())
+   }
+
 
 }
