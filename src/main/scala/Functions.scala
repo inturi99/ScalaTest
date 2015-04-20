@@ -71,13 +71,23 @@ object Functions {
     result
   }
   def isEven(i: Int) = i % 2 == 0
- def take (v: Vector[Int], n: Int ) = {
+ //take
+  def take (v: Vector[Int], n: Int ) = {
     var result  =  Vector[Int] ()
     var startIndex  =  1
     for( x  <-  v ) {
       if( startIndex <= n )
         result = result :+ x
          startIndex += 1
+    }
+    result
+  }
+  //takeWhile
+  def takeWhile (v: Vector[Int], n: Int => Boolean )  = {
+    var result = Vector[Int] ()
+     for(x <- v) {
+       if(n(x))
+     result = result :+ x
     }
     result
   }

@@ -63,6 +63,19 @@ class Test extends FlatSpec with Matchers {
     val tv=take(t,0)
     tv should be (Vector())
    }
-
-
+  "TakeWhile in Vector (10 ,20, 30, 40, 50, 60, 70, 80, 90), _ <= 40" should "be Vector(10 ,20, 30, 40) " in {
+    val v = Vector (10 ,20, 30, 40, 50, 60, 70, 80, 90)
+    val tw=takeWhile(v, _ <= 40)
+    tw should be (Vector(10 ,20, 30, 40))
+  }
+  "TakeWhile in Vector (10 ,20, 30, 40, 50, 60, 70, 80, 90), _ <= 0" should "be Empty  Vector() " in {
+    val v = Vector (10 ,20, 30, 40, 50, 60, 70, 80, 90)
+    val tw=takeWhile(v, _ <= 0)
+    tw should be (Vector())
+  }
+ "TakeWhile Empty  Vector(),0)" should "be Vector[]" in {
+    val t=Vector()
+    val tw=takeWhile (t,_ <= 0)
+    tw should be (Vector())
+   }
 }
