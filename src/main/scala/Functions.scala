@@ -85,9 +85,20 @@ object Functions {
   //takeWhile
   def takeWhile (v: Vector[Int], n: Int => Boolean )  = {
     var result = Vector[Int] ()
-     for(x <- v) {
-       if(n(x))
-     result = result :+ x
+    for(x <- v) {
+      if(n(x))
+        result = result :+ x
+    }
+    result
+  }
+  //drop Function
+  def drop (v: Vector [Int], n: Int ) = {
+     var result  =  Vector[Int] ()
+    var startIndex  =  0
+    for( x  <-  v  ) {
+      if (startIndex >= n)
+        result = result :+ x
+      startIndex += 1
     }
     result
   }

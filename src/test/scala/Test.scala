@@ -77,5 +77,16 @@ class Test extends FlatSpec with Matchers {
     val t=Vector()
     val tw=takeWhile (t,_ <= 0)
     tw should be (Vector())
-   }
+ }
+  "Drop in Vector(1, 2, 3, 4, 5, 6, 7, 8, 9),3)" should "be Vector[4, 5, 6, 7, 8, 9 ]" in {
+    val v=Vector(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    val dv=drop(v,3)
+    dv should be (Vector(4, 5, 6, 7, 8, 9))
+  }
+  "Drop in  Empty  Vector(),0)" should "be Vector[]" in {
+    val v=Vector()
+    val dv=drop(v,0)
+    dv should be (Vector())
+ }
+
 }
