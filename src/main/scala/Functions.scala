@@ -53,7 +53,7 @@ object Functions {
       arr(j+1) = temp
     }
   }
-   //map
+  //map
   def map(v: Vector[Int], f: Int => Int) = {
     var result = Vector[Int]()
     for(n <- v){
@@ -71,35 +71,31 @@ object Functions {
     result
   }
   def isEven(i: Int) = i % 2 == 0
- //take
+  //take
   def take (v: Vector[Int], n: Int ) = {
-    var result  =  Vector[Int] ()
-    var startIndex  =  1
+    var result = Vector[Int] ()
+    var startIndex = 0
     for( x  <-  v ) {
       if( startIndex <= n )
         result = result :+ x
-         startIndex += 1
-    }
-    result
-  }
-  //takeWhile
-  def takeWhile (v: Vector[Int], n: Int => Boolean )  = {
-    var result = Vector[Int] ()
-    for(x <- v) {
-      if(n(x))
-        result = result :+ x
+      startIndex += 1
     }
     result
   }
   //drop Function
   def drop (v: Vector [Int], n: Int ) = {
-     var result  =  Vector[Int] ()
-    var startIndex  =  0
-    for( x  <-  v  ) {
+    var result  =  Vector[Int] ()
+    var startIndex  = 0
+    for(x <- v) {
       if (startIndex >= n)
         result = result :+ x
       startIndex += 1
     }
+    result
+  }
+  //Concatenate Function
+  def concate(v1: Vector[Int], v2: Vector[Int]) = {
+    val result = v1 ++ v2
     result
   }
 }
