@@ -98,4 +98,14 @@ object Functions {
     val result = v1 ++ v2
     result
   }
+  //takeWhile Function
+  def takeWhile (v: Vector[Int], n: Int => Boolean) = {
+    def loop(v1: Vector[Int], n1: Int => Boolean, result: Vector[Int]): Vector[Int] = {
+      v1 match {
+        case y +: ys if(n1(y)) => loop(ys, n1, result:+ y)
+        case _ => result
+      }
+    }
+    loop(v, n, Vector())
+  }
 }
