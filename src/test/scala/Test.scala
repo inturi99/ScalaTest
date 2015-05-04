@@ -79,10 +79,16 @@ class Test extends FlatSpec with Matchers {
     val c = concate(v1, v2)
     c should be (Vector(1, 2, 3, 4, 5, 6, 7, 8))
   }
- "TakeWhile in Vector(10, 20, 30, 40, 50, 60, 50, 70, 80, 50, 90), _<= 50)" should "be Vector(10, 20, 30, 40, 50)" in {
-    val t = Vector(10, 20, 30, 40, 50, 60, 50, 70, 80, 50, 90)
-    val tv = takeWhile(t, _<=50)
-    tv should be (Vector(10, 20, 30, 40, 50))
+  "TakeWhile in Vector(10, 20, 30, 40, 50, 60, 50, 70, 80, 50, 90), _<= 50)" should "be Vector(10, 20, 30, 40, 50)" in {
+    val input = Vector(10, 20, 30, 40, 50, 60, 50, 70, 80, 50, 90)
+    val actual = takeWhile(input, _<=50)
+    val expected = Vector(10, 20, 30, 40, 50)
+    actual should be (expected)
   }
-
+  "TakeWhile in Vector (10, 20, 30, 40, 50, 60, 50, 70, 50, 60, 50, 80, 50, 90), _<= 50)" should "be Vector(10, 20, 30, 40, 50)" in {
+    val input = Vector(10, 20, 30, 40, 50, 60, 50, 70, 50, 60, 50, 80, 50, 90)
+    val actual = takeWhile(input, _<=50)
+    val expected = Vector(10, 20, 30, 40, 50)
+    actual should be (expected)
+  }
 }

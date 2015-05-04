@@ -95,7 +95,13 @@ object Functions {
   }
   //Concatenate Function
   def concate(v1: Vector[Int], v2: Vector[Int]) = {
-    val result = v1 ++ v2
+    var result = Vector[Int] ()
+    val x1 = for(x <- v1) {
+      result = result :+x
+    }
+    for(y <- v2){
+      result = result :+ y
+    }
     result
   }
   //takeWhile Function
